@@ -1,13 +1,10 @@
 language: python
 dist: xenial
-
 install:
 - pip install coverage pytest-cov coveralls
 - pip install -r requirements_dev.txt
-
-#after_success:
-#- coveralls
-
+after_success:
+- coveralls
 matrix:
   include:
   - name: '3.6'
@@ -16,18 +13,17 @@ matrix:
     python: 3.7
   - name: '3.8'
     python: 3.8
-  - name: 'pypy3'
+  - name: pypy3
     python: pypy3
-
 script: pytest --cov=web3data tests/
-
-#deploy:
-#  provider: pypi
-#  distributions: sdist bdist_wheel
-#  user: dmuhs
-#  password:
-#    secure: SOMETHING
-#  on:
-#    tags: true
-#    repo: dmuhs/web3data
-#    python: 3.6
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  skip_cleanup: true
+  user: dmuhs
+  password:
+    secure: Tku4WYmsRPT7rJNwdelOYfRVCne764woFFA0nffZpBBMSwWeZy3dBTEPUW1a50Vx5rJ7zL0nlx++nNTd8Qy7Ma+oFMzuaWQetmUhlEzDj0VqtxKGpoy5cD7HeO6ycfarbQxWQ6sZd3ltJ5YyAY8yzCvhTcA7p58wYoPj92jAUucncQedU9j82YvPfRZnXfk5zB2MWRn3V6mhX7trsgjnFxI14OrMwjpmf1WPdSV8Kkm5+WUxuvZp+aDe03ACut1EdnNe49xl9wRgs/fr4X+DCOOciR9w423l4zADqRTkAAvZxju0xvm5VRJGWpnV9d4QJLSeBmI7w0Rps4Ruyfh3yAG4XL+lnCJRPTkqcbXA4Gy22xBj0LzAwo71qwc95JPcAG0szght6eU+k1g3YDCuoicM+fQlvMRiy+lZ5m52QTRgZedHB3votdsWPrxcv6wlx/ln+kj3BcZgVeHVm90py/swJ3mWB9W5aQ7QWqoFop9j8J8tLq2RPZXURrPdkvBRrJ7ECxzij7sZRo2I4HHSeZ/JCrqUbSp7ON2PaTCxYXNqz/BXhrJEn3FOda9QdTMssqpDwEnXTA0wtUbbgjd3mwCQxgu2mCDM8VkZvypm2iuEXtQZwiuUAOX8+k+8NLgVKTaci2pLBvpl0ecDYrFlGyUwibdRuAKX9IUFrBocZXk=
+  on:
+    tags: true
+    repo: dmuhs/web3data-py
+    python: 3.7
