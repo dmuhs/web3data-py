@@ -89,15 +89,6 @@ Check out our `contribution guidelines <https://web3data-py.readthedocs.io/contr
 to see how to install the development version and run the test suite!
 
 
-TODO
-----
-
-- Integration of RPC calls
-- Websocket client integration
-- Live API tests (with pytest mark toggle)
-- Example directory
-
-
 Resources
 ---------
 
