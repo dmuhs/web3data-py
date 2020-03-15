@@ -4,19 +4,21 @@ web3data-py
 
 
 .. image:: https://img.shields.io/pypi/v/web3data-py.svg
-        :target: https://pypi.python.org/pypi/web3data-py
+    :target: https://pypi.python.org/pypi/web3data-py
 
 .. image:: https://img.shields.io/travis/dmuhs/web3data-py.svg
-        :target: https://travis-ci.com/dmuhs/web3data-py
+    :target: https://travis-ci.com/dmuhs/web3data-py
 
 .. image:: https://readthedocs.org/projects/web3data-py/badge/?version=latest
-        :target: https://web3data-py.readthedocs.io/?badge=latest
-        :alt: Documentation Status
-
+    :target: https://web3data-py.readthedocs.io/?badge=latest
+    :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/dmuhs/web3data-py/shield.svg
-     :target: https://pyup.io/repos/github/dmuhs/web3data-py/
-     :alt: Updates
+    :target: https://pyup.io/repos/github/dmuhs/web3data-py/
+    :alt: Updates
+
+.. image:: https://coveralls.io/repos/github/dmuhs/web3data-py/badge.svg?branch=master
+    :target: https://coveralls.io/github/dmuhs/web3data-py?branch=master
 
 
 
