@@ -88,6 +88,9 @@ Development
 Check out our `contribution guidelines <https://web3data-py.readthedocs.io/contributing.html>`_
 to see how to install the development version and run the test suite!
 
+Don't have the time to contribute? Open up an issue and we'll get it fixed!
+Simply like the project? Tip me some `BAT <https://brave.com/dmu968>`_ to sponsor development! :)
+
 
 Resources
 ---------
