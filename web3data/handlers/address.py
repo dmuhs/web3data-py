@@ -105,7 +105,7 @@ class AddressHandler(BaseHandler):
             - only used in conjunction with includePrice. (str)
         :key page: The page number to return. (int)
         :key size: Number of records per page (int)
-       :return: The API response parsed into a dict
+        :return: The API response parsed into a dict
         """
         return self._address_query(
             address=address,

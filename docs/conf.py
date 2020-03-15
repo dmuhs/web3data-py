@@ -20,9 +20,9 @@
 import os
 import sys
 
-import web3data
-
 sys.path.insert(0, os.path.abspath(".."))
+
+import web3data
 
 
 # -- General configuration ---------------------------------------------
@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode"]
+extensions = ["sphinx.ext.autodoc", "sphinx.ext.viewcode", "sphinx.ext.coverage"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -49,7 +49,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "web3data-py"
-copyright = "2020, Dominik Muhs"
+copyright = "2020-present, Dominik Muhs"
 author = "Dominik Muhs"
 
 # The version info for the project you're documenting, acts as replacement
@@ -85,7 +85,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "alabaster"
+html_theme = "sphinx_rtd_theme"
 
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
@@ -157,7 +157,7 @@ texinfo_documents = [
         "web3data-py Documentation",
         author,
         "web3data",
-        "One line description of project.",
-        "Miscellaneous",
+        "A Python library for the amberdata.io API.",
+        "Blockchain",
     )
 ]

@@ -1,5 +1,5 @@
 Welcome to web3data-py's documentation!
-======================================
+=======================================
 
 .. toctree::
    :maxdepth: 2
@@ -8,7 +8,7 @@ Welcome to web3data-py's documentation!
    readme
    installation
    usage
-   modules
+   web3data
    contributing
    authors
    history

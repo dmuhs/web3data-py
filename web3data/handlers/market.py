@@ -57,11 +57,11 @@ class MarketHandler(BaseHandler):
     def pairs(self, **kwargs) -> Dict:
         """Retrieves information about supported exchange-pairs.
         These types of data are supported:
-            - ticker
-            - ohlc (open-high-low-close)
-            - trade
-            - order_book
-            - order_book_update
+        - ticker
+        - ohlc (open-high-low-close)
+        - trade
+        - order_book
+        - order_book_update
 
         :key exchange: only return data for the given exchanges (comma separated) (str)
         :key pair: only return data for the given pairs (comma separated) (str)
