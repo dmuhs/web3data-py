@@ -1,0 +1,33 @@
+language: python
+dist: xenial
+
+install:
+- pip install coverage pytest-cov coveralls
+- pip install -r requirements_dev.txt
+
+#after_success:
+#- coveralls
+
+matrix:
+  include:
+  - name: '3.6'
+    python: 3.6
+  - name: '3.7'
+    python: 3.7
+  - name: '3.8'
+    python: 3.8
+  - name: 'pypy3'
+    python: pypy3
+
+script: pytest --cov=web3data tests/
+
+#deploy:
+#  provider: pypi
+#  distributions: sdist bdist_wheel
+#  user: dmuhs
+#  password:
+#    secure: SOMETHING
+#  on:
+#    tags: true
+#    repo: dmuhs/web3data
+#    python: 3.6
