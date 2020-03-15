@@ -2,8 +2,8 @@
 web3data-py Python API
 ======================
 
-.. image:: https://img.shields.io/pypi/v/web3data-py.svg
-    :target: https://pypi.python.org/pypi/web3data-py
+.. image:: https://img.shields.io/pypi/v/web3data.svg
+    :target: https://pypi.python.org/pypi/web3data
 
 .. image:: https://img.shields.io/travis/dmuhs/web3data-py.svg
     :target: https://travis-ci.org/github/dmuhs/web3data-py
