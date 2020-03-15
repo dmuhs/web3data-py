@@ -2,10 +2,10 @@
 History
 =======
 
-0.1.1 (2020-03-15)
-------------------
+0.1.1 + 0.1.2 (2020-03-15)
+--------------------------
 
-Add minor documentation and markup fixes
+Add minor documentation, markup, and package publishing fixes
 
 
 0.1.0 (2020-03-15)
