@@ -10,7 +10,7 @@ web3data-py
         :target: https://travis-ci.com/dmuhs/web3data-py
 
 .. image:: https://readthedocs.org/projects/web3data-py/badge/?version=latest
-        :target: https://web3data-py.readthedocs.io/en/latest/?badge=latest
+        :target: https://web3data-py.readthedocs.io/?badge=latest
         :alt: Documentation Status
 
 
