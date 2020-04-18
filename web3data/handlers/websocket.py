@@ -1,7 +1,7 @@
 """This module implements the websocket handler."""
 
 import json
-from typing import Tuple, Union
+from typing import Iterable, Tuple, Union
 from uuid import uuid4
 
 import websocket
@@ -43,9 +43,9 @@ class WebsocketHandler:
 
         :param payload:
         """
-        self.ws.send(json.dumps(payload))
+        self.ws.send(json.dumps(payload))  # pragma: no cover
 
-    def register(self, params: Union[Tuple[str], str], callback=None):
+    def register(self, params: Union[Iterable[str], str], callback=None):
         """
 
         :param params:
@@ -89,7 +89,7 @@ class WebsocketHandler:
 
         :param kwargs:
         """
-        self.ws.run_forever(**kwargs)
+        self.ws.run_forever(**kwargs)  # pragma: no cover
 
     def _on_message(self, ws, message):
         """
@@ -131,7 +131,7 @@ class WebsocketHandler:
         :param error:
         """
         # to be overwritten by user if needed
-        pass
+        pass  # pragma: no cover
 
     def _on_close(self, ws):
         """
@@ -146,7 +146,7 @@ class WebsocketHandler:
         :param ws:
         """
         # to be overwritten by user if needed
-        pass
+        pass  # pragma: no cover
 
     def _on_open(self, ws):
         """
@@ -159,7 +159,7 @@ class WebsocketHandler:
             )
             if payload is None:
                 raise ValueError(
-                    f"Subscription failed: internal ID {internal_id} does not exist"
+                    f"Payload for internal ID {internal_id} does not exist"
                 )
             self._websocket_send(payload)
 
@@ -171,4 +171,4 @@ class WebsocketHandler:
         :param ws:
         """
         # to be overwritten by user if needed
-        pass
+        pass  # pragma: no cover
