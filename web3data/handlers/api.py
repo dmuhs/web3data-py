@@ -10,6 +10,9 @@ from web3data.handlers.signature import SignatureHandler
 from web3data.handlers.token import TokenHandler
 from web3data.handlers.transaction import TransactionHandler
 from web3data.handlers.websocket import WebsocketHandler
+from typing import Dict, Any
+import requests
+from web3data.exceptions import APIError
 
 
 class APIHandler:
@@ -44,3 +47,28 @@ class APIHandler:
         self.websocket = WebsocketHandler(
             api_key=self.api_key, blockchain_id=self.blockchain_id
         )
+
+    def rpc(self, method: str, params: Dict[str, Any], ident: int = 1):
+        """Perform an HTTP POST RPC call on the API.
+
+        Consult the docs here for further details on supported commands:
+        https://docs.amberdata.io/reference#rpc-overview
+
+        :param method: The RPC method to call
+        :param params: Parameters attached to the RPC call
+        :param ident: RPC call identifier
+        """
+        if self.chain not in (Chains.ETH, Chains.ETH_RINKEBY, Chains.BTC):
+            raise APIError(f"RPC calls are not supported for {self.chain}")
+
+        return requests.post(
+            "https://rpc.web3api.io/",
+            json={
+                "jsonrpc": "2.0",
+                "method": method,
+                "params": params,
+                "id": ident,
+            },
+            headers={"x-amberdata-blockchain-id": self.blockchain_id},
+            params={"x-api-key": self.api_key},
+        ).json()

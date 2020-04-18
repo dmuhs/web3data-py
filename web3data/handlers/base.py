@@ -69,12 +69,3 @@ class BaseHandler:
             raise EmptyResponseError("The API returned an empty JSON response")
 
         return result
-
-    def rpc_call(self, method: str, params: Dict[str, Any]):
-        """Perform an HTTP POST RPC call on the API.
-
-        :param method: The RPC method to call
-        :param params: Parameters attached to the RPC call
-        """
-        # XXX: always POST at https://rpc.web3api.io/
-        raise NotImplementedError("RPC call integration is not supported yet.")
