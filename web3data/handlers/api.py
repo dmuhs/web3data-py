@@ -9,6 +9,7 @@ from web3data.handlers.market import MarketHandler
 from web3data.handlers.signature import SignatureHandler
 from web3data.handlers.token import TokenHandler
 from web3data.handlers.transaction import TransactionHandler
+from web3data.handlers.websocket import WebsocketHandler
 
 
 class APIHandler:
@@ -39,3 +40,7 @@ class APIHandler:
         self.block = BlockHandler(headers, chain)
         self.signature = SignatureHandler(headers, chain)
         self.market = MarketHandler(headers, chain)
+
+        self.websocket = WebsocketHandler(
+            api_key=self.api_key, blockchain_id=self.blockchain_id
+        )
