@@ -1,6 +1,7 @@
 import pytest
 import requests_mock
 
+from web3data.exceptions import APIError
 from web3data.chains import Chains
 from web3data.handlers import APIHandler
 from web3data.handlers.address import AddressHandler
@@ -14,6 +15,19 @@ from web3data.handlers.transaction import TransactionHandler
 TEST_KEY = "test-key"
 TEST_ID = "test-id"
 TEST_RPC = {"test": "response"}
+ALLOWED_CHAINS = (
+    Chains.BTC,
+    Chains.ETH,
+    Chains.ETH_RINKEBY,
+)
+NON_RPC_CHAINS = (
+    Chains.AION,
+    Chains.BCH,
+    Chains.BSV,
+    Chains.LTC,
+    Chains.XLM,
+    Chains.ZEC,
+)
 
 
 @pytest.mark.parametrize(
@@ -40,8 +54,9 @@ def test_api_handler_initialized(handler):
     assert isinstance(handler.transaction, TransactionHandler)
 
 
-def test_rpc():
-    handler = APIHandler(TEST_KEY, TEST_ID, Chains.ETH)
+@pytest.mark.parametrize("chain", ALLOWED_CHAINS)
+def test_allowed_rpc(chain):
+    handler = APIHandler(TEST_KEY, TEST_ID, chain)
     with requests_mock.Mocker() as m:
         m.register_uri(requests_mock.ANY, requests_mock.ANY, json=TEST_RPC)
 
@@ -59,3 +74,10 @@ def test_rpc():
             "method": "test-method",
             "params": ["test-param"],
         }
+
+
+@pytest.mark.parametrize("chain", NON_RPC_CHAINS)
+def test_non_rpc(chain):
+    handler = APIHandler(TEST_KEY, TEST_ID, chain)
+    with pytest.raises(APIError):
+        handler.rpc("test-method", ["test-param"])

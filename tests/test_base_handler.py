@@ -89,10 +89,3 @@ def test_base_handler_valid_response(chain):
 
         assert resp == RESPONSE
         assert_request_mock(m)
-
-
-@pytest.mark.parametrize("chain", CHAINS)
-def test_rpc_calll(chain):
-    handler = BaseHandler(chain)
-    with pytest.raises(NotImplementedError):
-        handler.rpc_call("foo", {"bar": "baz"})
