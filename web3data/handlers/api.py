@@ -1,7 +1,12 @@
 """This module contains the main API handler class."""
 
+from typing import Any, List
+
+import requests
+
 from web3data import __version__
 from web3data.chains import Chains
+from web3data.exceptions import APIError
 from web3data.handlers.address import AddressHandler
 from web3data.handlers.block import BlockHandler
 from web3data.handlers.contract import ContractHandler
@@ -10,9 +15,6 @@ from web3data.handlers.signature import SignatureHandler
 from web3data.handlers.token import TokenHandler
 from web3data.handlers.transaction import TransactionHandler
 from web3data.handlers.websocket import WebsocketHandler
-from typing import Dict, Any
-import requests
-from web3data.exceptions import APIError
 
 
 class APIHandler:
@@ -43,12 +45,11 @@ class APIHandler:
         self.block = BlockHandler(headers, chain)
         self.signature = SignatureHandler(headers, chain)
         self.market = MarketHandler(headers, chain)
-
         self.websocket = WebsocketHandler(
             api_key=self.api_key, blockchain_id=self.blockchain_id
         )
 
-    def rpc(self, method: str, params: Dict[str, Any], ident: int = 1):
+    def rpc(self, method: str, params: List[str], ident: int = 1):
         """Perform an HTTP POST RPC call on the API.
 
         Consult the docs here for further details on supported commands:

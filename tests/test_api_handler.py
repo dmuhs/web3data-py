@@ -1,4 +1,5 @@
 import pytest
+import requests_mock
 
 from web3data.chains import Chains
 from web3data.handlers import APIHandler
@@ -12,6 +13,7 @@ from web3data.handlers.transaction import TransactionHandler
 
 TEST_KEY = "test-key"
 TEST_ID = "test-id"
+TEST_RPC = {"test": "response"}
 
 
 @pytest.mark.parametrize(
@@ -36,3 +38,24 @@ def test_api_handler_initialized(handler):
     assert isinstance(handler.signature, SignatureHandler)
     assert isinstance(handler.token, TokenHandler)
     assert isinstance(handler.transaction, TransactionHandler)
+
+
+def test_rpc():
+    handler = APIHandler(TEST_KEY, TEST_ID, Chains.ETH)
+    with requests_mock.Mocker() as m:
+        m.register_uri(requests_mock.ANY, requests_mock.ANY, json=TEST_RPC)
+
+        response = handler.rpc("test-method", ["test-param"])
+        assert m.call_count == 1
+        assert response == TEST_RPC
+        assert (
+            m.request_history[0].url
+            == "https://rpc.web3api.io/?x-api-key=test-key"
+        )
+        assert m.request_history[0].method == "POST"
+        assert m.request_history[0].json() == {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "method": "test-method",
+            "params": ["test-param"],
+        }
