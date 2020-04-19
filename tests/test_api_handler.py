@@ -1,8 +1,8 @@
 import pytest
 import requests_mock
 
-from web3data.exceptions import APIError
 from web3data.chains import Chains
+from web3data.exceptions import APIError
 from web3data.handlers import APIHandler
 from web3data.handlers.address import AddressHandler
 from web3data.handlers.block import BlockHandler
@@ -15,11 +15,7 @@ from web3data.handlers.transaction import TransactionHandler
 TEST_KEY = "test-key"
 TEST_ID = "test-id"
 TEST_RPC = {"test": "response"}
-ALLOWED_CHAINS = (
-    Chains.BTC,
-    Chains.ETH,
-    Chains.ETH_RINKEBY,
-)
+ALLOWED_CHAINS = (Chains.BTC, Chains.ETH, Chains.ETH_RINKEBY)
 NON_RPC_CHAINS = (
     Chains.AION,
     Chains.BCH,
