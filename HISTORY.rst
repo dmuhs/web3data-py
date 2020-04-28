@@ -2,6 +2,15 @@
 History
 =======
 
+0.1.4 (2020-04-28)
+------------------
+
+- add support for RPC endpoints
+- add support for websocket endpoints
+- add examples for rpc and websocket calls
+- update coverage to 5.1
+- update sphinx to 3.0.3
+
 
 0.1.3 (2020-03-16)
 ------------------
