@@ -2,6 +2,18 @@
 History
 =======
 
+0.1.5 (2020-05-22)
+------------------
+
+- Include missing files in sdist
+- Update pip to 20.1.1
+- Update bumpversion to 0.6.0
+- Update flake8 to 3.8.1
+- Update pytest to 5.4.2
+- Update requests-mock to 1.8.0
+
+
+
 0.1.4 (2020-04-28)
 ------------------
 
