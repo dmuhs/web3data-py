@@ -2,6 +2,6 @@
 
 __author__ = """Dominik Muhs"""
 __email__ = "dominik.muhs@protonmail.ch"
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 from web3data.client import Chains, Web3Data
