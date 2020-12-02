@@ -105,7 +105,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route="market/prices/pairs",
+            route="market/spot/prices/pairs",
             headers=self.initial_headers,
             params={},
         )
@@ -310,7 +310,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route=f"market/prices/{pair}/historical",
+            route=f"market/spot/prices/{pair}/historical",
             headers=self.initial_headers,
             params=kwargs,
         )
@@ -325,7 +325,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route=f"market/prices/{pair}/latest",
+            route=f"market/spot/prices/{pair}/latest",
             headers=self.initial_headers,
             params=kwargs,
         )
@@ -341,7 +341,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route=f"market/prices/{base}/wap/latest",
+            route=f"market/spot/prices/{base}/wap/latest",
             headers=self.initial_headers,
             params=kwargs,
         )
