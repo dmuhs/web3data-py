@@ -17,11 +17,9 @@ TEST_ID = "test-id"
 TEST_RPC = {"test": "response"}
 ALLOWED_CHAINS = (Chains.BTC, Chains.ETH, Chains.ETH_RINKEBY)
 NON_RPC_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 
@@ -29,14 +27,12 @@ NON_RPC_CHAINS = (
 @pytest.mark.parametrize(
     "handler",
     (
-        APIHandler(TEST_KEY, TEST_ID, chain=Chains.AION),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.BCH),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.BSV),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.BTC),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.ETH),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.ETH_RINKEBY),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.LTC),
-        APIHandler(TEST_KEY, TEST_ID, chain=Chains.XLM),
         APIHandler(TEST_KEY, TEST_ID, chain=Chains.ZEC),
     ),
 )

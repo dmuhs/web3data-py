@@ -10,12 +10,10 @@ from web3data.handlers.token import TokenHandler
 from . import API_PREFIX, CHAINS, HEADERS, RESPONSE
 
 LIMITED_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 TOKEN_HANDLER_METHODS = (

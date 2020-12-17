@@ -12,11 +12,6 @@ class Web3Data:
 
         :param api_key: The Amberdata API key to perform requests with
         """
-        self.aion = APIHandler(
-            api_key=api_key,
-            blockchain_id="ce4b52f276dcbab8",
-            chain=Chains.AION,
-        )
         self.btc = APIHandler(
             api_key=api_key,
             blockchain_id="408fa195a34b533de9ad9889f076045e",
@@ -44,9 +39,6 @@ class Web3Data:
             api_key=api_key,
             blockchain_id="f94be61fd9f4fa684f992ddfd4e92272",
             chain=Chains.LTC,
-        )
-        self.xlm = APIHandler(
-            api_key=api_key, blockchain_id="822e2ebe02f74df8", chain=Chains.XLM
         )
         self.zec = APIHandler(
             api_key=api_key,

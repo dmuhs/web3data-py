@@ -6,14 +6,12 @@ from web3data.exceptions import APIError, EmptyResponseError
 from web3data.handlers.base import BaseHandler
 
 CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.ETH,
     Chains.ETH_RINKEBY,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 PARAMS = {"test": "value"}

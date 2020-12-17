@@ -215,7 +215,7 @@ class MarketHandler(BaseHandler):
             params=kwargs,
         )
 
-    def uniswap_liqudity(self, pair: str, **kwargs) -> Dict:
+    def uniswap_liquidity(self, pair: str, **kwargs) -> Dict:
         """Retrieves the Uniswap-specific ether and token balance pairs over time.
 
         Note: This endpoint returns a max of 6 months of historical data. In order
@@ -310,7 +310,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route=f"market/prices/{pair}/historical",
+            route=f"market/spot/prices/pairs/{pair}/historical",
             headers=self.initial_headers,
             params=kwargs,
         )
@@ -325,7 +325,7 @@ class MarketHandler(BaseHandler):
         """
         return self.raw_query(
             base_url=self.base_url,
-            route=f"market/prices/{pair}/latest",
+            route=f"market/spot/prices/pairs/{pair}/latest",
             headers=self.initial_headers,
             params=kwargs,
         )
