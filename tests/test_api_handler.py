@@ -55,10 +55,7 @@ def test_allowed_rpc(chain):
         response = handler.rpc("test-method", ["test-param"])
         assert m.call_count == 1
         assert response == TEST_RPC
-        assert (
-            m.request_history[0].url
-            == "https://rpc.web3api.io/?x-api-key=test-key"
-        )
+        assert m.request_history[0].url == "https://rpc.web3api.io/?x-api-key=test-key"
         assert m.request_history[0].method == "POST"
         assert m.request_history[0].json() == {
             "id": 1,

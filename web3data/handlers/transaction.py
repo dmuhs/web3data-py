@@ -40,7 +40,8 @@ class TransactionHandler(BaseHandler):
         )
 
     def token_transfers(self, tx_hash: str) -> Dict:
-        """Retrieves the token transfers that took place in the specified transaction.
+        """Retrieves the token transfers that took place in the specified
+        transaction.
 
         :param tx_hash: The transaction hash to fetch information for
         :return: The API response parsed into a dict
@@ -112,7 +113,8 @@ class TransactionHandler(BaseHandler):
         )
 
     def metrics(self) -> Dict:
-        """Get metrics for recent confirmed transactions for a given blockchain.
+        """Get metrics for recent confirmed transactions for a given
+        blockchain.
 
         :return: The API response parsed into a dict
         """

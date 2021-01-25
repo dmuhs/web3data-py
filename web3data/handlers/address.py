@@ -63,7 +63,6 @@ class AddressHandler(BaseHandler):
         :key page: The page number to return. (int)
         :key size: Number of records per page. (int)
         :return: The API response parsed into a dict
-
         """
         return self._address_query(
             route="", headers=self.initial_headers, params=kwargs
@@ -89,7 +88,8 @@ class AddressHandler(BaseHandler):
         )
 
     def balance_historical(self, address: str, **kwargs) -> Dict:
-        """Retrieves the historical (time series) account balances for the specified address.
+        """Retrieves the historical (time series) account balances for the
+        specified address.
 
         :param address: The address to fetch information for
         :key blockNumber: Filter by account balances at block number (int)
@@ -131,7 +131,8 @@ class AddressHandler(BaseHandler):
         )
 
     def balances_batch(self, addresses: List[str], **kwargs) -> Dict:
-        """Retrieves the latest account and token balances for the specified addresses.
+        """Retrieves the latest account and token balances for the specified
+        addresses.
 
         This is super useful if you want to get an entire portfolio's summary in a single call.
         Get totals for ETH & all token amounts with market prices.
@@ -150,7 +151,8 @@ class AddressHandler(BaseHandler):
         )
 
     def balances(self, address: str, **kwargs) -> Dict:
-        """Retrieves the latest account and token balances for the specified address.
+        """Retrieves the latest account and token balances for the specified
+        address.
 
         :param address: The address to fetch information for
         :key includePrice: Indicates whether or not to include price data with the results.
@@ -187,7 +189,8 @@ class AddressHandler(BaseHandler):
         )
 
     def internal_messages(self, address: str, **kwargs) -> Dict:
-        """Retrieves internal messages where this address is either the originator or a recipient.
+        """Retrieves internal messages where this address is either the
+        originator or a recipient.
 
         :param address: The address to fetch information for
         :key blockNumber: Filter by internal messages contained within this block number (int)
@@ -212,7 +215,8 @@ class AddressHandler(BaseHandler):
         )
 
     def logs(self, address: str, **kwargs) -> Dict:
-        """Retrieves the logs for the transactions where this address is either the originator or a recipient.
+        """Retrieves the logs for the transactions where this address is either
+        the originator or a recipient.
 
         :param address: The address to fetch information for
         :key blockNumber: Filter by logs contained in this block number (int)
@@ -233,7 +237,8 @@ class AddressHandler(BaseHandler):
         )
 
     def metadata(self, address: str, **kwargs) -> Dict:
-        """Retrieves statistics about the specified address: balances, holdings, etc.
+        """Retrieves statistics about the specified address: balances,
+        holdings, etc.
 
         :param address: The address to fetch information for
         :key timeFormat: The time format to use for the timestamps (milliseconds, ms, iso, iso8611). (str)
@@ -270,7 +275,8 @@ class AddressHandler(BaseHandler):
         )
 
     def token_balances_historical(self, address: str, **kwargs) -> Dict:
-        """Retrieves the historical (time series) token balances for the specified address.
+        """Retrieves the historical (time series) token balances for the
+        specified address.
 
         :param address: The address to fetch information for
         :key amount: Filters by token balances which value is equal to this amount (int)
@@ -350,7 +356,8 @@ class AddressHandler(BaseHandler):
         )
 
     def transactions(self, address: str, **kwargs) -> Dict:
-        """Retrieves the transactions where this address was either the originator or a recipient.
+        """Retrieves the transactions where this address was either the
+        originator or a recipient.
 
         :param address: The address to fetch information for
         :key blockNumber: Filter by transactions for this block number. (int)
@@ -401,7 +408,8 @@ class AddressHandler(BaseHandler):
         )
 
     def metrics(self) -> Dict:
-        """Get metrics for all addresses that have exist publicly for a given blockchain.
+        """Get metrics for all addresses that have exist publicly for a given
+        blockchain.
 
         Default metrics are for Ethereum over a 24h period.
 

@@ -5,6 +5,7 @@ from unittest.mock import Mock
 
 import pytest
 
+from web3data.exceptions import APIError
 from web3data.handlers.websocket import WebsocketHandler
 
 DATA_RESPONSE = json.dumps(
@@ -29,8 +30,9 @@ SUBSCRIPTION_RESPONSE = json.dumps(
         "result": "242d29d5c0ec9268f51a39aba4ed6a36c757c03c183633568edb0531658a9799",
     }
 )
-UNSUBSCRIPTION_RESPONSE = json.dumps(
-    {"jsonrpc": "2.0", "id": 1, "result": True}
+UNSUBSCRIPTION_RESPONSE = json.dumps({"jsonrpc": "2.0", "id": 1, "result": True})
+UNKNOWN_RESPONSE = json.dumps(
+    {"jsonrpc": "2.0", "id": 1, "result": {"invalid": "datatype"}}
 )
 
 
@@ -123,6 +125,14 @@ def test_on_message_unsubscription():
 
     # acknowledges, we don't expect another internal ID to come in
     assert handler.expected_ids == set()
+
+
+def test_on_message_unknown():
+    handler = get_handler()
+    assert_handler_initialized(handler)
+
+    with pytest.raises(APIError):
+        handler._on_message(None, UNKNOWN_RESPONSE)
 
 
 def test_on_message_invalid():

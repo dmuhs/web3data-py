@@ -70,12 +70,11 @@ class BlockHandler(BaseHandler):
             none, basic, full. Default: none. (str)
         :return: The API response parsed into a dict
         """
-        return self._block_query(
-            route="", headers=self.initial_headers, params=kwargs
-        )
+        return self._block_query(route="", headers=self.initial_headers, params=kwargs)
 
     def functions(self, block_id: str, **kwargs) -> Dict:
-        """Retrieves all the functions which were called at the specified block number or hash.
+        """Retrieves all the functions which were called at the specified block
+        number or hash.
 
         :param block_id: The block's ID to fetch information for
         :key validationMethod: The validation method to be added to the response:
@@ -110,7 +109,8 @@ class BlockHandler(BaseHandler):
         )
 
     def token_transfers(self, block_id: str, **kwargs) -> Dict:
-        """Retrieves all the token which were transferred at the specified block number.
+        """Retrieves all the token which were transferred at the specified
+        block number.
 
         :param block_id: The block's ID to fetch information for
         :key amount: Filter by tokens transfers where the number of tokens is equal

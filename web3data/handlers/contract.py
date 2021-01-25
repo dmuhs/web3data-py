@@ -45,7 +45,8 @@ class ContractHandler(BaseHandler):
         )
 
     def audit(self, address: str, **kwargs) -> Dict:
-        """Retrieves the vulnerabilities audit for the specified contract (if available).
+        """Retrieves the vulnerabilities audit for the specified contract (if
+        available).
 
         The automated security checks are provided by MythX. Check out their
         stellar service over at https://mythx.io/.
@@ -64,7 +65,8 @@ class ContractHandler(BaseHandler):
         )
 
     def details(self, address: str, **kwargs) -> Dict:
-        """Retrieves all the detailed information for the specified contract (ABI, bytecode, sourcecode...).
+        """Retrieves all the detailed information for the specified contract
+        (ABI, bytecode, sourcecode...).
 
         :param address: The address to fetch information for
         :param kwargs: Additional query parameter options

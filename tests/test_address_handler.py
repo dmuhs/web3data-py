@@ -38,9 +38,7 @@ ADDRESS_HANDLER_METHODS = (
 
 ADDRESS_PARAMS = []
 for chain_value, call in product(CHAINS, ADDRESS_HANDLER_METHODS):
-    ADDRESS_PARAMS.append(
-        [chain_value] + call[:-1] + [chain_value in call[-1]]
-    )
+    ADDRESS_PARAMS.append([chain_value] + call[:-1] + [chain_value in call[-1]])
 
 
 @pytest.mark.parametrize("chain,method,parameters,raises", ADDRESS_PARAMS)

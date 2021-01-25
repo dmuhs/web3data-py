@@ -55,8 +55,9 @@ class MarketHandler(BaseHandler):
         )
 
     def pairs(self, **kwargs) -> Dict:
-        """Retrieves information about supported exchange-pairs.
-        These types of data are supported:
+        """Retrieves information about supported exchange-pairs. These types of
+        data are supported:
+
         - ticker
         - ohlc (open-high-low-close)
         - trade
@@ -137,7 +138,8 @@ class MarketHandler(BaseHandler):
         )
 
     def order_best_bid_historical(self, pair: str, **kwargs) -> Dict:
-        """Retrieves historical best bid and offer information for the specified pair.
+        """Retrieves historical best bid and offer information for the
+        specified pair.
 
         :param pair: The asset pair to look up
         :key exchange: The exchange(s) for which to retrieve order book data.
@@ -156,7 +158,8 @@ class MarketHandler(BaseHandler):
         )
 
     def order_best_bid_latest(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the latest best bid and offer information for the specified pair and exchange.
+        """Retrieves the latest best bid and offer information for the
+        specified pair and exchange.
 
         :param pair: The asset pair to look up
         :key exchange: The exchange(s) for which to retrieve order book data.
@@ -216,7 +219,8 @@ class MarketHandler(BaseHandler):
         )
 
     def uniswap_liquidity(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the Uniswap-specific ether and token balance pairs over time.
+        """Retrieves the Uniswap-specific ether and token balance pairs over
+        time.
 
         Note: This endpoint returns a max of 6 months of historical data. In order
         to get more than 6 months you must use the startDate & endDate parameters
@@ -237,7 +241,8 @@ class MarketHandler(BaseHandler):
         )
 
     def trade_pairs_historical(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the historical (time series) trade data for the specified pair.
+        """Retrieves the historical (time series) trade data for the specified
+        pair.
 
         Note: This endpoint returns a max of 6 months of historical data. In order to
         get more than 6 months you must use the startDate & endDate parameters to move
@@ -272,7 +277,8 @@ class MarketHandler(BaseHandler):
         )
 
     def ohlcv_pair_historical(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the historical (time series) open-high-low-close for the specified pair.
+        """Retrieves the historical (time series) open-high-low-close for the
+        specified pair.
 
         Note: This endpoint returns a max of 6 months of historical data. In order to get more
         than 6 months you must use the startDate & endDate parameters to move the time frame
@@ -347,7 +353,8 @@ class MarketHandler(BaseHandler):
         )
 
     def ticker_bid_ask_latest(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the latest market ticker Bid/Ask/Mid/Last for the specified pair.
+        """Retrieves the latest market ticker Bid/Ask/Mid/Last for the
+        specified pair.
 
         :param pair: The asset pair to look up
         :key exchange: The exchange(s) for which to retrieve market tickers. Example: exchange=bitfinex,bitstamp (str)
@@ -361,7 +368,8 @@ class MarketHandler(BaseHandler):
         )
 
     def ticker_bid_ask_historical(self, pair: str, **kwargs) -> Dict:
-        """Retrieves the historical ticker, bid/ask/mid/last, for the specified pair.
+        """Retrieves the historical ticker, bid/ask/mid/last, for the specified
+        pair.
 
         Note: This endpoint returns a max of 6 months of historical data. In order to get more
         than 6 months you must use the startDate & endDate parameters to move the time frame
@@ -407,7 +415,8 @@ class MarketHandler(BaseHandler):
         )
 
     def token_price_latest(self, address: str, **kwargs) -> Dict:
-        """Retrieves the latest price (and other market information) for the specified token.
+        """Retrieves the latest price (and other market information) for the
+        specified token.
 
         :param address: The token's smart contract address
         :key currency: The additional currency (other than ETH and USD)
@@ -422,7 +431,8 @@ class MarketHandler(BaseHandler):
         )
 
     def token_rankings_historical(self, **kwargs) -> Dict:
-        """Retrieves the top ranked tokens by a specific metric, with a lookback window.
+        """Retrieves the top ranked tokens by a specific metric, with a
+        lookback window.
 
         Useful for viewing token trends.
 
