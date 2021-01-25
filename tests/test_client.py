@@ -9,14 +9,12 @@ CLIENT = Web3Data("test-key")
 @pytest.mark.parametrize(
     "client",
     (
-        CLIENT.aion,
         CLIENT.bch,
         CLIENT.bsv,
         CLIENT.btc,
         CLIENT.eth,
         CLIENT.eth_rinkeby,
         CLIENT.ltc,
-        CLIENT.xlm,
         CLIENT.zec,
     ),
 )

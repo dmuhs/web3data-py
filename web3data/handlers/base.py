@@ -19,12 +19,10 @@ class BaseHandler:
     """
 
     LIMITED = (
-        Chains.AION,
         Chains.BTC,
         Chains.BCH,
         Chains.BSV,
         Chains.LTC,
-        Chains.XLM,
         Chains.ZEC,
     )
 

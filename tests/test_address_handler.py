@@ -10,12 +10,10 @@ from web3data.handlers.address import AddressHandler
 from . import API_PREFIX, CHAINS, HEADERS, RESPONSE
 
 LIMITED_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 ADDRESS_HANDLER_METHODS = (

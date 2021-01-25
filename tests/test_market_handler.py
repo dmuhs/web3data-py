@@ -10,12 +10,10 @@ from web3data.handlers.market import MarketHandler
 from . import API_PREFIX, CHAINS, HEADERS, RESPONSE
 
 LIMITED_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 MARKET_HANDLER_METHODS = (
@@ -42,7 +40,7 @@ MARKET_HANDLER_METHODS = (
     ["token_rankings_latest", (), LIMITED_CHAINS],
     ["trade_pairs_historical", ("PAIR",), ()],
     ["trades", (), ()],
-    ["uniswap_liqudity", ("PAIR",), ()],
+    ["uniswap_liquidity", ("PAIR",), ()],
 )
 
 MARKET_PARAMS = []

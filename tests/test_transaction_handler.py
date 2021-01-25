@@ -10,12 +10,10 @@ from web3data.handlers.transaction import TransactionHandler
 from . import API_PREFIX, CHAINS, HEADERS, RESPONSE
 
 LIMITED_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 TRANSACTION_HANDLER_METHODS = (

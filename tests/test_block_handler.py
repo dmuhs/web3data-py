@@ -10,12 +10,10 @@ from web3data.handlers.block import BlockHandler
 from . import API_PREFIX, CHAINS, HEADERS, RESPONSE
 
 LIMITED_CHAINS = (
-    Chains.AION,
     Chains.BCH,
     Chains.BSV,
     Chains.BTC,
     Chains.LTC,
-    Chains.XLM,
     Chains.ZEC,
 )
 BLOCK_HANDLER_METHODS = (
