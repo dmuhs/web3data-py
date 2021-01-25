@@ -2,6 +2,13 @@
 History
 =======
 
+0.1.6 (2021-01-25)
+------------------
+
+- Add CSV format switch support
+- Various dependency upgrades
+
+
 0.1.5 (2020-05-22)
 ------------------
 
@@ -11,7 +18,6 @@ History
 - Update flake8 to 3.8.1
 - Update pytest to 5.4.2
 - Update requests-mock to 1.8.0
-
 
 
 0.1.4 (2020-04-28)
@@ -36,7 +42,6 @@ History
 - update twine from 1.14.0 to 3.1.1
 - update watchdog from 0.9.0 to 0.10.2
 - update wheel from 0.33.6 to 0.34.2
-
 
 
 0.1.1 + 0.1.2 (2020-03-15)
