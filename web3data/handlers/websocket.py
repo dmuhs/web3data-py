@@ -1,10 +1,12 @@
 """This module implements the websocket handler."""
 
 import json
-from typing import Iterable, Tuple, Union
+from typing import Iterable, Union
 from uuid import uuid4
 
 import websocket
+
+from web3data.exceptions import APIError
 
 
 class WebsocketHandler:
@@ -152,6 +154,8 @@ class WebsocketHandler:
             # handle unsubscription acknowledgement
             internal_id = message.get("id")
             self.expected_ids.remove(internal_id)
+        else:
+            raise APIError(f"Received unknown message: {message}")
 
     def _on_error(self, ws, error):
         """An internal handler for websocket errors.

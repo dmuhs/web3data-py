@@ -5,6 +5,7 @@ from unittest.mock import Mock
 
 import pytest
 
+from web3data.exceptions import APIError
 from web3data.handlers.websocket import WebsocketHandler
 
 DATA_RESPONSE = json.dumps(
@@ -30,6 +31,9 @@ SUBSCRIPTION_RESPONSE = json.dumps(
     }
 )
 UNSUBSCRIPTION_RESPONSE = json.dumps({"jsonrpc": "2.0", "id": 1, "result": True})
+UNKNOWN_RESPONSE = json.dumps(
+    {"jsonrpc": "2.0", "id": 1, "result": {"invalid": "datatype"}}
+)
 
 
 def get_handler():
