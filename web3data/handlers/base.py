@@ -1,7 +1,7 @@
 """This module contains the API handler's base class."""
 
 from json.decoder import JSONDecodeError
-from typing import Any, Dict
+from typing import Dict, Union
 
 import requests
 from requests.compat import urljoin
@@ -39,7 +39,7 @@ class BaseHandler:
         route: str,
         headers: Dict[str, str],
         params: Dict[str, str],
-    ) -> Dict:
+    ) -> Union[Dict, str]:
         """Perform an HTTP GET request on an API REST endpoint.
 
         :param base_url: The API base URL (common prefix)
@@ -51,9 +51,13 @@ class BaseHandler:
         resp = requests.get(
             url=urljoin(base_url, route), headers=headers, params=params
         )
+
         if not resp.content:
             # triggered if the API returns empty response body
             raise EmptyResponseError("The API returned an empty JSON response")
+
+        if params.get("format", "") == "csv":
+            return resp.text
 
         try:
             result = resp.json()
