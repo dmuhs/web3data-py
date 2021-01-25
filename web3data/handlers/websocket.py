@@ -198,9 +198,7 @@ class WebsocketHandler:
         :param ws: The websocket client instance
         """
         for internal_id in self.internal_registry.keys():
-            payload = self.internal_registry.get(internal_id, {}).get(
-                "payload"
-            )
+            payload = self.internal_registry.get(internal_id, {}).get("payload")
             if payload is None:
                 raise ValueError(
                     f"Payload for internal ID {internal_id} does not exist"

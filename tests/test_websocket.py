@@ -29,9 +29,7 @@ SUBSCRIPTION_RESPONSE = json.dumps(
         "result": "242d29d5c0ec9268f51a39aba4ed6a36c757c03c183633568edb0531658a9799",
     }
 )
-UNSUBSCRIPTION_RESPONSE = json.dumps(
-    {"jsonrpc": "2.0", "id": 1, "result": True}
-)
+UNSUBSCRIPTION_RESPONSE = json.dumps({"jsonrpc": "2.0", "id": 1, "result": True})
 
 
 def get_handler():

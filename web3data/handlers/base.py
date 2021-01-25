@@ -13,9 +13,8 @@ from web3data.exceptions import APIError, EmptyResponseError
 class BaseHandler:
     """The API handler base class.
 
-    This class defines the basic methods of performing REST API
-    endpoint queries as well as RPC queries, which are implemented
-    across all handler classes to standardize API requests.
+    This class defines the basic methods of performing REST API endpoint queries as well as RPC
+    queries, which are implemented across all handler classes to standardize API requests.
     """
 
     LIMITED = (
@@ -63,9 +62,7 @@ class BaseHandler:
             result = resp.json()
         except JSONDecodeError:
             # triggered e.g. when API returns empty response or XML error message
-            raise APIError(
-                f"Unable to parse API response to JSON: {resp.content}"
-            )
+            raise APIError(f"Unable to parse API response to JSON: {resp.content}")
         if not result:
             # triggered if the API returns empty JSON object response
             raise EmptyResponseError("The API returned an empty JSON response")

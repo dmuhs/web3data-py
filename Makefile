@@ -50,8 +50,13 @@ clean-test: ## remove test and coverage artifacts
 lint: ## check style with flake8
 	flake8 web3data tests
 
+format:
+	isort web3data tests examples
+	black -t py37 web3data tests docs examples
+	docformatter --wrap-descriptions 100 -ri web3data/
+
 test: ## run tests quickly with the default Python
-	pytest
+	pytest -vv --basetemp={envtmpdir} --cov=web3data --cov-report=term --cov-report=xml --cov-report=html --cov-branch
 
 test-all: ## run tests on every Python version with tox
 	tox

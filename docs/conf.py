@@ -140,9 +140,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, "web3data", "web3data-py Documentation", [author], 1)
-]
+man_pages = [(master_doc, "web3data", "web3data-py Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------

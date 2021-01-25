@@ -28,9 +28,7 @@ TRANSACTION_HANDLER_METHODS = (
 
 TRANSACTION_PARAMS = []
 for chain_value, call in product(CHAINS, TRANSACTION_HANDLER_METHODS):
-    TRANSACTION_PARAMS.append(
-        [chain_value] + call[:2] + [chain_value in call[2]]
-    )
+    TRANSACTION_PARAMS.append([chain_value] + call[:2] + [chain_value in call[2]])
 
 
 @pytest.mark.parametrize("chain,method,parameters,raises", TRANSACTION_PARAMS)

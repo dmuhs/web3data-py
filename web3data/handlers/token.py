@@ -36,7 +36,8 @@ class TokenHandler(BaseHandler):
         )
 
     def holders_historical(self, address: str, **kwargs) -> Dict:
-        """Retrieves the historical (time series) token holders for the specified token address.
+        """Retrieves the historical (time series) token holders for the
+        specified token address.
 
         :param address: The token's smart contract address
         :key holderAddresses: A comma separated list of addresses for which the historical
@@ -91,7 +92,8 @@ class TokenHandler(BaseHandler):
         return self._token_query(address, "holders/latest", kwargs)
 
     def supply_historical(self, address: str, **kwargs) -> Dict:
-        """Retrieves the historical token supplies (and derivatives) for the specified address.
+        """Retrieves the historical token supplies (and derivatives) for the
+        specified address.
 
         :param address: The token's smart contract address
         :param kwargs: Additional query parameter options
@@ -109,7 +111,8 @@ class TokenHandler(BaseHandler):
         return self._token_query(address, "supplies/historical", kwargs)
 
     def supply_latest(self, address: str) -> Dict:
-        """Retrieves the latest token supplies (and derivatives) for the specified address.
+        """Retrieves the latest token supplies (and derivatives) for the
+        specified address.
 
         :param address: The token's smart contract address
         :return: The API response parsed into a dict
@@ -165,7 +168,8 @@ class TokenHandler(BaseHandler):
         return self._token_query(address, "velocity", kwargs)
 
     def volume(self, address: str, **kwargs) -> Dict:
-        """Retrieves the historical number of transfers for the specified address.
+        """Retrieves the historical number of transfers for the specified
+        address.
 
         :param address: The token's smart contract address
         :key timeFormat: The time format to use with the timestamps: milliseconds/ms or iso/iso8611 (str)

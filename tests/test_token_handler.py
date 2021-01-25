@@ -20,9 +20,7 @@ SIGNATURE_HANDLER_METHODS = (["details", ("SIGNATURE",), LIMITED_CHAINS],)
 
 SIGNATURE_PARAMS = []
 for chain_value, call in product(CHAINS, SIGNATURE_HANDLER_METHODS):
-    SIGNATURE_PARAMS.append(
-        [chain_value] + call[:2] + [chain_value in call[2]]
-    )
+    SIGNATURE_PARAMS.append([chain_value] + call[:2] + [chain_value in call[2]])
 
 
 @pytest.mark.parametrize("chain,method,parameters,raises", SIGNATURE_PARAMS)
