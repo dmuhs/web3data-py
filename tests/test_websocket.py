@@ -127,6 +127,14 @@ def test_on_message_unsubscription():
     assert handler.expected_ids == set()
 
 
+def test_on_message_unknown():
+    handler = get_handler()
+    assert_handler_initialized(handler)
+
+    with pytest.raises(APIError):
+        handler._on_message(None, UNKNOWN_RESPONSE)
+
+
 def test_on_message_invalid():
     handler = get_handler()
     assert_handler_initialized(handler)
