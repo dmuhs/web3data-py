@@ -2,6 +2,12 @@
 History
 =======
 
+0.1.7 (2021-02-10)
+------------------
+
+- Add deprecation warning for Uniswap liquidity endpoint
+
+
 0.1.6 (2021-01-25)
 ------------------
 
