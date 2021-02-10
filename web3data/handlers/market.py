@@ -1,5 +1,6 @@
 """This module contains the address subhandler."""
 
+import warnings
 from typing import Dict
 
 from web3data.chains import Chains
@@ -233,6 +234,10 @@ class MarketHandler(BaseHandler):
         :key endDate: Filter to liquidity changes before this date (int)
         :return: The API response parsed into a dict
         """
+        warnings.warn(
+            "The Uniswap liquidity endpoint is scheduled for deprecation",
+            PendingDeprecationWarning,
+        )
         return self.raw_query(
             base_url=self.base_url,
             route=f"market/orders/uniswap/{pair}/liquidity",
@@ -340,7 +345,8 @@ class MarketHandler(BaseHandler):
         """Retrieves the latest VWAP & TWAP price for the specified base.
 
         :param base: The pair's base
-        :key quote: The currency of the pair. Example: if pair is "eth_usd", then quote is "usd" (str)
+        :key quote: The currency of the pair. Example: if pair is "eth_usd",
+            then quote is "usd" (str)
         :key timeFormat: Time format to use for the timestamps
             (Options: milliseconds, ms, iso, iso8611) (str)
         :return: The API response parsed into a dict
@@ -357,7 +363,8 @@ class MarketHandler(BaseHandler):
         specified pair.
 
         :param pair: The asset pair to look up
-        :key exchange: The exchange(s) for which to retrieve market tickers. Example: exchange=bitfinex,bitstamp (str)
+        :key exchange: The exchange(s) for which to retrieve market tickers.
+            Example: exchange=bitfinex,bitstamp (str)
         :return: The API response parsed into a dict
         """
         return self.raw_query(
